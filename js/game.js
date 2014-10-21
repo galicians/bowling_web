@@ -1,10 +1,6 @@
 
 
 
-
-
-
-
 function Game() {
 	this.frames = []
 	this.fillFrames()

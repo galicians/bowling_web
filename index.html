@@ -2,8 +2,9 @@
 
 <head>
 
-<link href="views/style.css" type="text/css" rel="stylesheet" />
-
+	<link rel="stylesheet" type="text/css" href="./views/style.css">
+	<link href='http://fonts.googleapis.com/css?family=Press+Start+2P' rel='stylesheet' type='text/css'>
+	<script src="js/jquery-1.11.1.js"></script>
 </head>
 <body>
 	<headder>
@@ -11,23 +12,45 @@
 
 	</header>
 	<main>
-		<h2>app in the web</h2>
+		
+		<h1 id="title">CRAZY ASS BOWLING</h1> </header>
 
+	<main>
+
+	<img align="center" class="category" id="bowlingball" src="images/bowlingball.png">
+
+	<div id="score"><h3>score</h3></div>
+	<div id="message"><h3>message</h3></div>
+		<div id="isSpare"><h3></h3></div>
+	<div id="isStrike"><h3></h3></div>
+	<div id="totalScore"><h3></h3></div>
+	<div id="currentFrame"><h3></h3></div>
+	<div id="currentRoll"><h3></h3></div>
+	<div id="remaningPins"><h3></h3></div>
+
+	<!--  -->
+<!-- 	<img align="center" class="category" id="bowlingpin1" src="images/bowlingpin.png">
+	<img align="center" class="category" id="bowlingpin2" src="images/bowlingpin.png">
+	<img align="center" class="category" id="bowlingpin3" src="images/bowlingpin.png">
+	<img align="center" class="category" id="bowlingpin4" src="images/bowlingpin.png">
+	<img align="center" class="category" id="bowlingpin5" src="images/bowlingpin.png">
+ -->
+	<div id="lane"> </div>
 
 
 	
 
 
 	</main>
-		<script type="text/javascript" src= "js/frontEndLogic.js" ></script>
 		<script type="text/javascript" src= "js/game.js" ></script>
+		<script type="text/javascript" src= "js/frontEndLogic.js" ></script>
 		
 		<script type="text/javascript" >
 			game = new Game
 			
 			iteratePins()
-			game.rollTheBall(5)
-			iteratePins()
+			// game.rollTheBall(5)
+			// iteratePins()
 
 			function iteratePins() {
 				var pins = game.currentFrame.pins
@@ -36,11 +59,23 @@
 					displayPins(pins[p])
 				}
 			}
+			
+			function randThrow() {
+				var remainingPins = game.currentFrame.numberRemainingPins()
+				return Math.floor(Math.random()*remainingPins)
+			}
+			
+			$('img.category').on('click', function() { $(this).animate({ opacity: 0.0, paddingLeft: '+=80'}, 500, function() { $(this).remove()})})
+
+
 
 			function displayPins(p) {
 				var pin = document.createElement("img")
-					p.isKnocked ? pin.setAttribute("src", "images/pinDown.jpeg") : pin.setAttribute("src", "images/bowlingpin-01.png")
-				
+					p.isKnocked ? pin.setAttribute("src", "images/pinDown.jpeg") : pin.setAttribute("src", "images/bowlingpin.png")
+					pin.align="center"
+					pin.class="category"
+					pin.id="bowlingpin"
+
 				// pin.setAttribute("width", "50")
 				// pin.setAttribute("height", "50")
 				document.body.appendChild(pin)
