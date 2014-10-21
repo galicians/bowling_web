@@ -8,18 +8,30 @@
 	function iteratePins() {
 		var pins = game.currentFrame.pins
 		for(var p = 0; p < pins.length; p++) {
-			console.log(pins[p].isKnocked)
 			if (pins[p].isKnocked) {
 				putPinDown(p) }
 				else {
-
+				putPinBack(p)
 			}
 		}
 	}
 	
 	function randThrow() {
 		var remainingPins = game.currentFrame.numberRemainingPins()
-		return Math.floor(Math.random()*remainingPins)
+		randomNumber = Math.floor(Math.random() * 11)
+		console.log('remainingPins')
+		console.log(remainingPins)
+		if (remainingPins === 10) {
+			finalResult = randomNumber > 6 ? randomNumber : randomNumber + Math.floor(Math.random() * 5)
+			console.log('inside 1st stament')
+			console.log(finalResult)
+			return finalResult }
+		else {
+			finalResult = randomNumber < remainingPins ? randomNumber : remainingPins -1
+			console.log('inside 2nd stament')
+			console.log(finalResult)
+			return finalResult
+		}
 	}
 	
 
@@ -28,13 +40,12 @@
 // $('#bowlingball').on('click', function() { $(this).animate({ "left": "0px", "bottom": "20px"}, 1)
 
 
-$('#bowlingball').on('click', function() { $(this).animate({ "left": "1200px", "bottom": "20px"}, 2000, function() { 
+$('#bowlingball').on('click', function() { $(this).animate({ "left": "1200px", "bottom": "10px"}, 2000, function() { 
 	// $(this).remove()
 	iteratePins()
 	randNumber = randThrow()
 	game.rollTheBall(randNumber)
-	iteratePins()
-	$('#score h3').text(game.currentFrame.numberPinsKnockOver())
+	$('#score h3').text(randNumber)
 	$('#message').text("keep trying")
 	// $('#isStrike h3').
 	// $('#isSpare h3').
@@ -55,13 +66,7 @@ function putPinDown(pinNumber) {
 }
 
 function putPinBack(pinNumber) {
-	// css = {}
+	var css = { 1:'90', 2:'60', 3:'60', 4:'30',5:'30',6:'30',7:'0',8:'0',9:'0',10:'0'}
 	$('#bowlingpin' + pinNumber).delay(10).show("fast"); 
-	$('#bowlingpin' + pinNumber).animate({"right": "-50px", "bottom": "0px"}, 500); 
-	pinNumber = 1 right:90
-	
-
-	// 2,3 60
-	// 456 30
-	// 789 10 0
+	$('#bowlingpin' + pinNumber).animate({"right": css[pinNumber] + "px", "bottom": "10px"}, 500); 
 }
