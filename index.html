@@ -1,0 +1,52 @@
+<html>
+
+<head>
+
+<link href="views/style.css" type="text/css" rel="stylesheet" />
+
+</head>
+<body>
+	<headder>
+
+
+	</header>
+	<main>
+		<h2>app in the web</h2>
+
+
+
+	
+
+
+	</main>
+		<script type="text/javascript" src= "js/frontEndLogic.js" ></script>
+		<script type="text/javascript" src= "js/game.js" ></script>
+		
+		<script type="text/javascript" >
+			game = new Game
+			
+			iteratePins()
+			game.rollTheBall(5)
+			iteratePins()
+
+			function iteratePins() {
+				var pins = game.currentFrame.pins
+				for(var p = 0; p < pins.length; p++) {
+
+					displayPins(pins[p])
+				}
+			}
+
+			function displayPins(p) {
+				var pin = document.createElement("img")
+					p.isKnocked ? pin.setAttribute("src", "images/pinDown.jpeg") : pin.setAttribute("src", "images/bowlingpin-01.png")
+				
+				// pin.setAttribute("width", "50")
+				// pin.setAttribute("height", "50")
+				document.body.appendChild(pin)
+			}
+
+		</script>
+</body>
+
+</html>
