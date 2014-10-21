@@ -48,7 +48,7 @@ Game.prototype.rollTheBall = function(pinsDown) {
 	this.currentFrame.newRoll()
 	this.updatingPlayerScore(pinsDown)
 	this.assignBonus()
-	// if ( this.currentFrame.remainingRolls == 0 || this.isStrike() ) this.changeFrame()
+	if ( this.currentFrame.remainingRolls == 0 || this.isStrike() ) this.changeFrame()
 }
 
 Game.prototype.isStrike = function() {
