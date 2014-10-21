@@ -3,64 +3,129 @@
 	padding: 0;
 }
 
+/*body {
+	background-size: 100%;
+}*/
+
 #title {
-	color: rgb(90,159,216);
+	color: white;
 	text-align: center;
 	font-family: 'Press Start 2P', cursive;
 	font-weight: bold;
 	font-size: 48px;
 	font-weight: 400;
-	text-shadow: -4px 0 black, 0 4px black, 4px 0 black, 0 -4px black;
+	text-shadow: -4px 0 rgb(90,159,216), 0 4px rgb(90,159,216), 4px 0 rgb(90,159,216), 0 -4px rgb(90,159,216);
 	top: 30px;
 	position: relative;
 }
 
+#score {
+	font-family: 'Press Start 2P', cursive;
+	font-size: 30px;
+	color:#FF4040;
+	position: fixed;
+	bottom: 15px;
+	right: 55px;
+	text-shadow: 2px 2px white;
+}
+
 #bowlingball {
-	height: 148.5px;
-	width: 148.5px;
+	height: 74.25px;
+	width: 74.25px;
 	position: fixed;
 	bottom: 10;
 	left: 0;
+	z-index: 7;
 }
 
 #bowlingpin1 {
-	width: 111px;
-	height: 240.9px;
+	width: 55.5px;
+	height: 120.45px;
 	position: fixed;
 	bottom: 10;
-	right: 0;
+	right: 90;
+	z-index: 10;
 }
 
 #bowlingpin2 {
-	width: 111px;
-	height: 240.9px;
+	width: 55.5px;
+	height: 120.45px;
 	position: fixed;
 	bottom: 10;
-	right: 50;
+	right: 60;
+	z-index: 9;
 }
 
 #bowlingpin3 {
-	width: 111px;
-	height: 240.9px;
+	width: 55.5px;
+	height: 120.45px;
 	position: fixed;
 	bottom: 10;
-	right: 100;
+	right: 60;
+	z-index: 9;
 }
 
 #bowlingpin4 {
-	width: 111px;
-	height: 240.9px;
+	width: 55.5px;
+	height: 120.45px;
 	position: fixed;
 	bottom: 10;
-	right: 150;
+	right: 30;
+	z-index: 8;
 }
 
 #bowlingpin5 {
-	width: 111px;
-	height: 240.9px;
+	width: 55.5px;
+	height: 120.45px;
 	position: fixed;
 	bottom: 10;
-	right: 200;
+	right: 30;
+	z-index: 8;
+}
+
+#bowlingpin6 {
+	width: 55.5px;
+	height: 120.45px;
+	position: fixed;
+	bottom: 10;
+	right: 30;
+	z-index: 8;
+}
+
+#bowlingpin7 {
+	width: 55.5px;
+	height: 120.45px;
+	position: fixed;
+	bottom: 10;
+	right: 0;
+	z-index: 7;
+}
+
+#bowlingpin8 {
+	width: 55.5px;
+	height: 120.45px;
+	position: fixed;
+	bottom: 10;
+	right: 0;
+	z-index: 7;
+}
+
+#bowlingpin9 {
+	width: 55.5px;
+	height: 120.45px;
+	position: fixed;
+	bottom: 10;
+	right: 0;
+	z-index: 7;
+}
+
+#bowlingpin10 {
+	width: 55.5px;
+	height: 120.45px;
+	position: fixed;
+	bottom: 10;
+	right: 0;
+	z-index: 7;
 }
 
 #lane {

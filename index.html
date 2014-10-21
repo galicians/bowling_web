@@ -2,86 +2,52 @@
 
 <head>
 
-	<link rel="stylesheet" type="text/css" href="./views/style.css">
-	<link href='http://fonts.googleapis.com/css?family=Press+Start+2P' rel='stylesheet' type='text/css'>
-	<script src="js/jquery-1.11.1.js"></script>
-</head>
-<body>
-	<headder>
+<link rel="stylesheet" type="text/css" href="./views/style.css">
 
-
-	</header>
-	<main>
-		
-		<h1 id="title">CRAZY ASS BOWLING</h1> </header>
-
-	<main>
-
-	<img align="center" class="category" id="bowlingball" src="images/bowlingball.png">
-
-	<div id="score"><h3>score</h3></div>
-	<div id="message"><h3>message</h3></div>
-		<div id="isSpare"><h3></h3></div>
-	<div id="isStrike"><h3></h3></div>
-	<div id="totalScore"><h3></h3></div>
-	<div id="currentFrame"><h3></h3></div>
-	<div id="currentRoll"><h3></h3></div>
-	<div id="remaningPins"><h3></h3></div>
-
-	<!--  -->
-<!-- 	<img align="center" class="category" id="bowlingpin1" src="images/bowlingpin.png">
-	<img align="center" class="category" id="bowlingpin2" src="images/bowlingpin.png">
-	<img align="center" class="category" id="bowlingpin3" src="images/bowlingpin.png">
-	<img align="center" class="category" id="bowlingpin4" src="images/bowlingpin.png">
-	<img align="center" class="category" id="bowlingpin5" src="images/bowlingpin.png">
- -->
-	<div id="lane"> </div>
-
-
+<link href='http://fonts.googleapis.com/css?family=Press+Start+2P' rel='stylesheet' type='text/css'>
 	
+</head>
+
+<body background="images/background.png">
+
+<headder><h1 id="title">CRAZY ASS BOWLING</h1> </header></header>
+
+<main>
+
+<img align="center" class="category" id="bowlingball" src="images/bowlingball.png">
+
+<!-- 1st row -->
+<img align="center" class="category" id="bowlingpin1" src="images/bowlingpin.png">
+<!-- 2nd row -->
+<img align="center" class="category" id="bowlingpin2" src="images/bowlingpin.png">
+<img align="center" class="category" id="bowlingpin3" src="images/bowlingpin.png">
+<!-- 3rd row -->
+<img align="center" class="category" id="bowlingpin4" src="images/bowlingpin.png">
+<img align="center" class="category" id="bowlingpin5" src="images/bowlingpin.png">
+<img align="center" class="category" id="bowlingpin6" src="images/bowlingpin.png">
+<!-- 4th row -->
+<img align="center" class="category" id="bowlingpin7" src="images/bowlingpin.png">
+<img align="center" class="category" id="bowlingpin8" src="images/bowlingpin.png">
+<img align="center" class="category" id="bowlingpin9" src="images/bowlingpin.png">
+<img align="center" class="category" id="bowlingpin10" src="images/bowlingpin.png">
+	
+<div id="lane"> </div>
+
+<div id="score"><h3>score</h3></div>
+<div id="message"><h3>message</h3></div>
+<div id="isSpare"><h3></h3></div>
+<div id="isStrike"><h3></h3></div>
+<div id="totalScore"><h3></h3></div>
+<div id="currentFrame"><h3></h3></div>
+<div id="currentRoll"><h3></h3></div>
+<div id="remaningPins"><h3></h3></div>
+	
+</main>
 
 
-	</main>
+		<script src="js/jquery-1.11.1.js"></script>
 		<script type="text/javascript" src= "js/game.js" ></script>
 		<script type="text/javascript" src= "js/frontEndLogic.js" ></script>
-		
-		<script type="text/javascript" >
-			game = new Game
-			
-			iteratePins()
-			// game.rollTheBall(5)
-			// iteratePins()
-
-			function iteratePins() {
-				var pins = game.currentFrame.pins
-				for(var p = 0; p < pins.length; p++) {
-
-					displayPins(pins[p])
-				}
-			}
-			
-			function randThrow() {
-				var remainingPins = game.currentFrame.numberRemainingPins()
-				return Math.floor(Math.random()*remainingPins)
-			}
-			
-			$('img.category').on('click', function() { $(this).animate({ opacity: 0.0, paddingLeft: '+=80'}, 500, function() { $(this).remove()})})
-
-
-
-			function displayPins(p) {
-				var pin = document.createElement("img")
-					p.isKnocked ? pin.setAttribute("src", "images/pinDown.jpeg") : pin.setAttribute("src", "images/bowlingpin.png")
-					pin.align="center"
-					pin.class="category"
-					pin.id="bowlingpin"
-
-				// pin.setAttribute("width", "50")
-				// pin.setAttribute("height", "50")
-				document.body.appendChild(pin)
-			}
-
-		</script>
 </body>
 
 </html>
